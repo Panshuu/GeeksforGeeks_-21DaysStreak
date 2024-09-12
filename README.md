@@ -6,7 +6,9 @@ This repository contains my daily solutions for the GeeksforGeeks Problem of the
 
 ## Challenge Details:
 Start Date: 12th September 2024
+
 Duration: 21 days
+
 Goal: Solve the Problem of the Day (POTD) on GeeksforGeeks consistently for 21 days.
 
 ## Conclusion
