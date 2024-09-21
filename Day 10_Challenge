@@ -1,0 +1,35 @@
+Clone a linked list with next and random pointer.
+
+class Solution {
+  public:
+    Node *copyList(Node *head) {
+        // Write your code here
+        Node *var=head;
+        while(var)
+        {
+            Node *n=new Node(var->data);
+            n->next=var->next;
+            var->next=n;
+            var=n->next;
+        }
+        var=head;
+        while(var)
+        {
+            if(var->random)
+            {
+                var->next->random=var->random->next;
+            }
+            var=var->next->next;
+        }
+        Node *head2=new Node(0);
+        Node *ans=head2;
+        while(var)
+        {
+            head2->next=var->next;
+            head2=head2->next;
+            var->next=head2->next;
+            var=var->next;
+        }
+        return ans->next;
+    }
+};
