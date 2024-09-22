@@ -1,0 +1,27 @@
+Given a string of characters, find the length of the longest proper prefix which is also a proper suffix.
+
+class Solution {
+  public:
+    int lps(string str) {
+        // Your code goes here
+        int i=0, j=1, n=str.length();
+        int pos=1,count=0;
+        while(i<n&&j<n)
+        {
+            if(str[i]==str[j])
+            {
+                i++;
+                j++;
+                count++;
+            }
+            else
+            {
+                i=0;
+                pos++;
+                j=pos;
+                count=0;
+            }
+        }
+        return count;
+    }
+};
