@@ -1,1 +1,22 @@
 Missing and Repeating
+
+class Solution{
+  public:
+    vector<int> findTwoElement(vector<int>& arr) {
+        // code here
+        int n=arr.size();
+        long long s=((long long)n*(n+1))/2;
+        long long sq=(((long long)n*(n+1)*(2*n+1)))/6;
+        long sum=0,sqsum=0;
+        for(int i=0;i<n;i++)
+        {
+            sum+=arr[i];
+            sqsum+=((long long)arr[i]*arr[i]);
+        }
+        long long xmy=s-sum;
+        long long xpy=(sq-sqsum)/xmy;
+        long long miss=(xmy+xpy)/2;
+        long long repeat=xpy-miss;
+        return {repeat,miss};
+    }
+};
