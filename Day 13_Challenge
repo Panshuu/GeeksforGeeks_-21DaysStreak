@@ -1,0 +1,32 @@
+class Solution
+{
+    public:
+    //Function to find the smallest window in the string s consisting
+    //of all the characters of string p.
+    string smallestWindow(string s, string p) {
+    vector<int> p_count(26, 0), s_count(26, 0);
+    for (char c : p) p_count[c - 'a']++;
+
+    int start = 0, min_len = INT_MAX, count = 0, start_index = -1;
+
+    for (int j = 0; j < s.length(); j++) {
+        s_count[s[j] - 'a']++;
+
+        if (p_count[s[j] - 'a'] != 0 && s_count[s[j] - 'a'] <= p_count[s[j] - 'a']) count++;
+
+        if (count == p.length()) {
+            while (s_count[s[start] - 'a'] > p_count[s[start] - 'a'] || p_count[s[start] - 'a'] == 0) {
+                if (s_count[s[start] - 'a'] > p_count[s[start] - 'a']) s_count[s[start] - 'a']--;
+                start++;
+            }
+            int window_len = j - start + 1;
+            if (window_len < min_len) {
+                min_len = window_len;
+                start_index = start;
+            }
+        }
+    }
+
+    return (start_index == -1) ? "-1" : s.substr(start_index, min_len);
+    }
+};
