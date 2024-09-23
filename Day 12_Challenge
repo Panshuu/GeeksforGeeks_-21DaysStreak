@@ -1,5 +1,8 @@
 Missing and Repeating
 
+Given an unsorted array arr of of positive integers.
+One number 'A' from set {1, 2,....,n} is missing and one number 'B' occurs twice in array. Find numbers A and B.
+
 class Solution{
   public:
     vector<int> findTwoElement(vector<int>& arr) {
