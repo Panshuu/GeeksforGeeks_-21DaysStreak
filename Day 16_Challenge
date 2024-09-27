@@ -1,3 +1,7 @@
+K Sized Subarray Maximum
+
+Given an array arr[] and an integer k. Find the maximum for each and every contiguous subarray of size k.
+
 class Solution {
   public:
     // Function to find maximum of each subarray of size k.
