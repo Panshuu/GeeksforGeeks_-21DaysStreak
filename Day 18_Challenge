@@ -1,0 +1,19 @@
+class Solution {
+  public:
+    int totalCount(int k, vector<int>& arr) { 
+        // code here
+        int count=0;
+        for(int i=0;i<arr.size();i++)
+        {
+            int ques=0,rem=0;
+            ques=arr[i]/k;
+            rem=arr[i]%k;
+            count+=ques;
+            if(rem!=0)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+};
