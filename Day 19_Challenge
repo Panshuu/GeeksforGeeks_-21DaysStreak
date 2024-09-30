@@ -1,0 +1,21 @@
+class Solution {
+  public:
+    // Function to return a list of integers denoting the node
+    // values of both the BST in a sorted order.
+    vector<int> merge(Node *root1, Node *root2) 
+    {
+        vector<int> ans;
+        Inorder(ans,root1);
+        Inorder(ans,root2);
+        sort(ans.begin(),ans.end());
+        return ans;
+    }
+    void Inorder(vector<int> &vec,struct Node* node)
+    {
+        if (node == nullptr)
+            return;
+        Inorder(vec,node->left);
+        vec.push_back(node->data);
+        Inorder(vec,node->right);
+    }
+};
