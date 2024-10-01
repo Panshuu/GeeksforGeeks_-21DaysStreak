@@ -1,3 +1,8 @@
+Multiply Two Linked Lists
+
+Given elements as nodes of the two singly linked lists. The task is to multiply these two linked lists, say L1 and L2.
+Note: The output could be large take modulo 10^9+7.
+
 class solution {
   public:
     const long long MOD = 1000000007;
